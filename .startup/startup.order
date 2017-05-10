@@ -1,3 +1,4 @@
+install_sbt.sh
 create_schema.sh
 docker.sh
 start_spark_job.sh
