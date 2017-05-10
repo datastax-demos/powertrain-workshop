@@ -65,5 +65,6 @@ RUN apt-get install sbt
 COPY docker.sh .
 
 EXPOSE 9000
+EXPOSE 9092
 
 CMD docker.sh
