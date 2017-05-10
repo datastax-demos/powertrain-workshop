@@ -1,4 +1,4 @@
-IP="ip route get 1 | awk '{print $NF;exit}'"
+IP="$(ip route get 1 | awk '{print $NF;exit}')"
 echo "Cloning Powertrain repos"
 git clone https://github.com/datastax-demos/PowertrainStreaming.git 
 git clone https://github.com/datastax-demos/Powertrain2.git
