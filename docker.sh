@@ -2,7 +2,7 @@
 HOST_IP="$(/sbin/ip route|awk '/eth0/ { print $9 }')"
 
 #Install kafka
-wget https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.0.0/kafka_2.10-0.10.0.0.tgz
+wget http://apache.claz.org/kafka/0.10.0.0/kafka_2.10-0.10.0.0.tgz
 tar -xvf kafka_2.10-0.10.0.0.tgz
 cd kafka_2.10-0.10.0.0
 nohup bin/zookeeper-server-start.sh config/zookeeper.properties 2>&1 1> zookeeper.log &
