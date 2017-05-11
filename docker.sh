@@ -10,11 +10,9 @@ nohup bin/kafka-server-start.sh config/server.properties 2>&1 1> kafka.log &
 export KAFKA_JMX_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname='$HOST_IP' -Dcom.sun.management.jmxremote.port=5052"
 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 5 --topic vehicle_events
 
+
 #Install powertrain
 cd /Powertrain2/
-cp conf/application._template.conf conf/application.conf
-sed -i '/dse_graph_host/c\dse_graph_host="'$HOST_IP'"' conf/application.conf
-sed -i '/graph_name/c\graph_name="powertrain_graph"' conf/application.conf
 sed -i '/this.ws = new WebSocket/c\this.ws = new WebSocket("ws://" + "localhost:9000" + "/vehicleStream");' public/game/bkcore/hexgl/VehicleStream.js
 
 sbt playUpdateSecret

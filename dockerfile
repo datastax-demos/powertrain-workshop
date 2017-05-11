@@ -62,6 +62,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B
 RUN apt-get update
 RUN apt-get install sbt
 
+COPY application.conf /Powertrain2/conf
 COPY docker.sh .
 
 EXPOSE 9000
