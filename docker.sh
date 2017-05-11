@@ -1,6 +1,5 @@
 #!/bin/sh
-HOST_IP="$(/sbin/ip route|awk '/default/ { print $3 }')"
-HOST_IP=10.0.0.125
+HOST_IP="$(/sbin/ip route|awk '/eth0/ { print $9 }')"
 
 #Install kafka
 wget https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.0.0/kafka_2.10-0.10.0.0.tgz
