@@ -15,4 +15,4 @@ dsetool -h $IP create_core vehicle_tracking_app.vehicle_stats generateResources=
 dsetool -h $IP create_core vehicle_tracking_app.vehicle_events generateResources=true
 
 echo "Creating DSE Graph schema"
-dse gremlin-console << cat ~/PowertrainWorkshop/Powertrain2/resources/graph/summit_demo_schema.groovy
+dse gremlin-console -e PowertrainWorkshop/Powertrain2/resources/graph/load_schema.groovy
