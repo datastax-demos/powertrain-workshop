@@ -1,5 +1,6 @@
 install_sbt.sh
 create_schema.sh
 create_application_conf.sh
-docker.sh
+install_kafka.sh
 start_spark_job.sh
+start_powertrain.sh
