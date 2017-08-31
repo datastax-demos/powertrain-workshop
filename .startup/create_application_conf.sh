@@ -1,4 +1,4 @@
-HOST_IP="$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')"
+HOST_IP="$(grep 'node0_ext' /etc/hosts | cut -d$'\t' -f 1| awk '{ print $1}')"
 
 cd /tmp/Powertrain2/conf
 
