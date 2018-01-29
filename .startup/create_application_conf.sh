@@ -11,4 +11,4 @@ sed -i '/tokens/c\tokens:["c57b7dfa59d36e8b7edc0134b79f6ee293de6f86"]' applicati
 
 cd /tmp/Powertrain2/public/game
 
-sed -i '/href="client_id="/c\<a style="color:#000000" href="https://github.com/login/oauth/authorize?client_id=a81ec76eb967c5dc2d56">' index.html
+sed -i '/authorize?client_id/c\<a style="color:#000000" href="https://github.com/login/oauth/authorize?client_id=a81ec76eb967c5dc2d56">' index.html
