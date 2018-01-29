@@ -3,4 +3,4 @@ echo "Submitting Spark Streaming Job"
 sed -i '/spark.dse_host/c\spark.dse_host'$'\t'${HOST_IP} /tmp/PowertrainStreaming/conf/application.conf
 cd /tmp/PowertrainStreaming
 sbt package
-nohup dse spark-submit --packages org.apache.spark:spark-streaming-kafka_2.10:1.6.0 --conf=spark.executor.memory=3g --class powertrain.StreamVehicleData  --properties-file=/tmp/PowertrainStreaming/conf/application.conf /tmp/PowertrainStreaming/target/scala-2.10/streaming-vehicle-app_2.10-1.0-SNAPSHOT.jar 2>&1 1> streaming.log &
+nohup dse spark-submit --packages org.apache.spark:spark-streaming-kafka-0-10_2.10:2.0.2 --conf=spark.executor.memory=3g --class powertrain.StreamVehicleData  --properties-file=/tmp/PowertrainStreaming/conf/application.conf /tmp/PowertrainStreaming/target/scala-2.10/streaming-vehicle-app_2.10-1.0-SNAPSHOT.jar 2>&1 1> streaming.log &
