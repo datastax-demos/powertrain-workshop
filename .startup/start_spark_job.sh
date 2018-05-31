@@ -1,6 +1,26 @@
-HOST_IP="$(grep 'node0' /etc/hosts | cut -d$'\t' -f 1 | head -n1)"
+#!/bin/bash
+
+sedi () {
+    sed --version >/dev/null 2>&1 && sed -i -- "$@" || sed -i "" "$@"
+}
+
+set -x
+IP=$(ifconfig | awk '/inet/ { print $2 }' | egrep -v '^fe|^127|^192|^172|::' | head -1)
+IP=${IP#addr:}
+
+if [[ $HOSTNAME == "node"* ]] ; then
+    #rightscale
+    IP=$(grep $(hostname)_ext /etc/hosts | awk '{print $1}')
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+    IP=localhost
+fi
+
+
 echo "Submitting Spark Streaming Job"
-sed -i '/spark.dse_host/c\spark.dse_host'$'\t'${HOST_IP} /tmp/PowertrainStreaming/conf/application.conf
+sedi 's/spark.dse_host/spark.dse_host'$'\t'${IP}'/' /tmp/PowertrainStreaming/conf/application.conf
 cd /tmp/PowertrainStreaming
 sbt package
-nohup dse spark-submit --packages org.apache.spark:spark-streaming-kafka-0-10_2.10:2.0.2 --conf=spark.executor.memory=3g --class powertrain.StreamVehicleData  --properties-file=/tmp/PowertrainStreaming/conf/application.conf /tmp/PowertrainStreaming/target/scala-2.10/streaming-vehicle-app_2.10-1.0-SNAPSHOT.jar 2>&1 1> streaming.log &
+nohup dse spark-submit --packages org.apache.spark:spark-streaming-kafka-0-10_2.11:2.0.2 --conf=spark.executor.memory=3g --class powertrain.StreamVehicleData --properties-file=/tmp/PowertrainStreaming/conf/application.conf /tmp/PowertrainStreaming/target/scala-2.11/streaming-vehicle-app_2.11-0.1.jar &

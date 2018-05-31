@@ -37,3 +37,184 @@ Built site for language en:
 0 tags created
 0 categories created
 total in 14 ms
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 45 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 18 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 7 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 9 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 8 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 11 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+
+Change detected, rebuilding site
+2018-05-31 14:35 -0400
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/index.md": RENAME
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/index.md": CREATE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 36 ms
+
+Change detected, rebuilding site
+2018-05-31 14:51 -0400
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/index.md": REMOVE|RENAME
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/index.md": CREATE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 109 ms
+
+Change detected, rebuilding site
+2018-05-31 15:02 -0400
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/sample/sample.md": RENAME
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/sample/sample.md": CREATE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 27 ms
+adding created directory to watchlist /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/script
+
+Change detected, rebuilding site
+2018-05-31 15:03 -0400
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/script/sample.md": CREATE
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/script": CREATE
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/sample": REMOVE|RENAME
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 42 ms
+
+Change detected, rebuilding site
+2018-05-31 15:03 -0400
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/script/script.md": CREATE
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/script/sample.md": RENAME
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 12 ms
+Config file changed: /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/config.toml
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 23 ms
+
+Change detected, rebuilding site
+2018-05-31 15:04 -0400
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/index.md": RENAME
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/index.md": CREATE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 6 ms

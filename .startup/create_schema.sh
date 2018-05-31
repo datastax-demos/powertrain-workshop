@@ -1,4 +1,19 @@
-IP="$(ip route get 1 | awk '{print $NF;exit}')"
+#!/bin/bash
+
+set -x
+
+IP=$(ifconfig | awk '/inet/ { print $2 }' | egrep -v '^fe|^127|^192|^172|::' | head -1)
+IP=${IP#addr:}
+
+if [[ $HOSTNAME == "node"* ]] ; then
+    #rightscale
+    IP=$(grep $(hostname)_ext /etc/hosts | awk '{print $1}')
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+    IP=localhost
+fi
 
 cd /tmp
 
@@ -15,4 +30,4 @@ dsetool -h $IP create_core vehicle_tracking_app.vehicle_stats generateResources=
 dsetool -h $IP create_core vehicle_tracking_app.vehicle_events generateResources=true
 
 echo "Creating DSE Graph schema"
-sudo dse gremlin-console -e /tmp/Powertrain2/resources/graph/load_schema.groovy
+dse gremlin-console -e /tmp/Powertrain2/resources/graph/load_schema.groovy
