@@ -218,3 +218,59 @@ Built site for language en:
 0 non-page files copied
 0 paginator pages created
 total in 6 ms
+
+Change detected, rebuilding site
+2018-05-31 15:29 -0400
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/script/script.md": RENAME
+Source changed "/Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/content/script/script.md": CREATE
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 59 ms
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 15 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 9 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
+Started building sites ...
+Built site for language en:
+0 draft content
+0 future content
+0 expired content
+3 regular pages created
+6 other pages created
+0 non-page files copied
+0 paginator pages created
+total in 17 ms
+Watching for changes in /Users/sebastianestevez/Desktop/powertrain-workshop/docsrc/{content,static,themes}
+Serving pages from memory
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop

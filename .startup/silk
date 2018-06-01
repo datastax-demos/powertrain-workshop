@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -x
+IP=$(ifconfig | awk '/inet/ { print $2 }' | egrep -v '^fe|^127|^192|^172|::' | head -1)
+IP=${IP#addr:}
+
+if [[ $HOSTNAME == "node"* ]] ; then
+    #rightscale
+    IP=$(grep $(hostname)_ext /etc/hosts | awk '{print $1}')
+fi
+
+#if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+    #IP=localhost
+#fi
+
+
+git clone https://github.com/phact/docker-silk-dse
+
+cd docker-silk-dse
+
+curl -OL https://raw.githubusercontent.com/phact/silk/dev/silkconfig/conf/schema.cql
+
+cqlsh $IP -f schema.cql
+
+dsetool write_resource silkconfig.silkconfig name=stopwords.txt file=stopwords.txt
+dsetool write_resource silkconfig.silkconfig name=synonyms.txt file=synonyms.txt
+dsetool write_resource silkconfig.silkconfig name=lang/stopwords_en.txt file=lang/stopwords_en.txt
+dsetool write_resource silkconfig.silkconfig name=protwords.txt file=protwords.txt
+dsetool create_core silkconfig.silkconfig schema=./schema.xml solrconfig=./solrconfig.xml
+
+cqlsh $IP -e "copy silkconfig.silkconfig from '../silkconfig.csv'"
+
+echo "$IP:8983" > config.txt
+
+docker build -t silk-image . --no-cache
+docker run -d -p 0.0.0.0:5601:5601 --name silk silk-image
