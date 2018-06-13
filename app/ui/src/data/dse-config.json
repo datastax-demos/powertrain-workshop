@@ -1,0 +1,113 @@
+{
+  "version": "v1",
+  "config": {
+    "visState": {
+      "filters": [],
+      "layers": [
+        {
+          "id": "3ekkl9f",
+          "type": "point",
+          "config": {
+            "dataId": "dsedata",
+            "label": "Vehicle Stats",
+            "color": [
+              23,
+              184,
+              190
+            ],
+            "columns": {
+              "lat": "lat",
+              "lng": "lon",
+              "altitude": "elevation"
+            },
+            "isVisible": true,
+            "visConfig": {
+              "radius": 10,
+              "fixedRadius": false,
+              "opacity": 0.8,
+              "outline": true,
+              "thickness": 2,
+              "colorRange": {
+                "name": "ColorBrewer RdYlBu-10",
+                "type": "diverging",
+                "category": "ColorBrewer",
+                "colors": [
+                  "#313695",
+                  "#4575b4",
+                  "#74add1",
+                  "#abd9e9",
+                  "#e0f3f8",
+                  "#fee090",
+                  "#fdae61",
+                  "#f46d43",
+                  "#d73027",
+                  "#a50026"
+                ],
+                "reversed": true
+              },
+              "radiusRange": [
+                28.6,
+                71.8
+              ],
+              "hi-precision": false
+            }
+          },
+          "visualChannels": {
+            "colorField": {
+              "name": "speed",
+              "type": "real"
+            },
+            "colorScale": "quantile",
+            "sizeField": {
+              "name": "acceleration",
+              "type": "real"
+            },
+            "sizeScale": "sqrt"
+          }
+        }
+      ],
+      "interactionConfig": {
+        "tooltip": {
+          "fieldsToShow": {
+            "dsedata": [
+              "vehicleId",
+              "timePeriod",
+              "collect_time",
+              "acceleration",
+              "elapsedTime"
+            ]
+          },
+          "enabled": true
+        },
+        "brush": {
+          "size": 0.5,
+          "enabled": false
+        }
+      },
+      "layerBlending": "normal",
+      "splitMaps": []
+    },
+    "mapState": {
+      "bearing": -69.98091934084995,
+      "dragRotate": true,
+      "latitude": -0.4373736607707486,
+      "longitude": -3.1119852910066026,
+      "pitch": 58.694358500270035,
+      "zoom": 5.772750214168159,
+      "isSplit": false
+    },
+    "mapStyle": {
+      "styleType": "dark",
+      "topLayerGroups": {},
+      "visibleLayerGroups": {
+        "label": true,
+        "road": true,
+        "border": true,
+        "building": true,
+        "water": true,
+        "land": true
+      },
+      "mapStyles": {}
+    }
+  }
+}

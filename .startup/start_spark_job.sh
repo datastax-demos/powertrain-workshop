@@ -20,7 +20,7 @@ fi
 
 
 echo "Submitting Spark Streaming Job"
-sedi 's/spark.dse_host/spark.dse_host'$'\t'${IP}'/' /tmp/PowertrainStreaming/conf/application.conf
+sedi 's/spark.dse_host.*/spark.dse_host    '${IP}'/' /tmp/PowertrainStreaming/conf/application.conf
 cd /tmp/PowertrainStreaming
 sbt package
-nohup dse spark-submit --packages org.apache.spark:spark-streaming-kafka-0-10_2.11:2.0.2 --conf=spark.executor.memory=3g --class powertrain.StreamVehicleData --properties-file=/tmp/PowertrainStreaming/conf/application.conf /tmp/PowertrainStreaming/target/scala-2.11/streaming-vehicle-app_2.11-0.1.jar &
+nohup dse spark-submit --packages org.apache.spark:spark-streaming-kafka-0-10_2.11:2.0.2 --conf=spark.executor.memory=3g --class powertrain.StreamVehicleData --properties-file=/tmp/PowertrainStreaming/conf/application.conf /tmp/PowertrainStreaming/target/scala-2.11/streaming-vehicle-app_2.11-1.0-SNAPSHOT.jar &
