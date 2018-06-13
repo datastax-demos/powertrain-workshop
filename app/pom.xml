@@ -65,7 +65,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.datastax.powertools.powertrainapp.PowertrainApplication</mainClass>
+                    <mainClass>com.datastax.powertools.PowertrainApplication</mainClass>
                     <arguments>
                         <argument>-classpath</argument>
                         <classpath/>
@@ -94,7 +94,7 @@
                                         implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.datastax.powertools.migui.MigUIApplication</mainClass>
+                                    <mainClass>com.datastax.powertools.PowertrainApplication</mainClass>
                                 </transformer>
 
                             </transformers>

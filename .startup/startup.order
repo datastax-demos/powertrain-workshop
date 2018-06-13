@@ -4,5 +4,6 @@ create_application_conf.sh
 install_kafka.sh
 start_spark_job.sh
 start_powertrain.sh
+ui
 #silk
 hugo

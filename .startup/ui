@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -x
+
+export MapboxAccessToken=pk.eyJ1IjoicGhhY3QiLCJhIjoiY2poc3kyYjZjMDd4czNwcDc4NnFuN3M0MSJ9.evDUvKHEPevjLOv1t04aAA
+
+cd app
+
+cd ui
+
+npm run build
+
+cd ..
+
+mvn package
+
+nohup java -jar target/powertrainapp.jar server conf/powertrainApplication.yaml &

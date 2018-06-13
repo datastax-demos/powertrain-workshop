@@ -5,3 +5,4 @@ target/
 docker-silk-dse/
 app/ui/node_modules/
 app/.idea/
+nohup.out

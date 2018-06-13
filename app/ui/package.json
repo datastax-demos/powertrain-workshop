@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --progress --hot --open"
+    "start": "webpack-dev-server --progress --hot --open",
+    "build": "webpack -p"
   },
   "dependencies": {
     "axios": "^0.18.0",

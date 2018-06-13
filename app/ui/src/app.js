@@ -40,7 +40,7 @@ class App extends Component {
   // Created to show how to replace dataset with new data and keeping the same configuration
   fetchData = () => {
     const config = this.getMapConfig();
-    this.props.dispatch(fetchData(`http://localhost:8081/api/v0/powertrain/allEvents`));
+    this.props.dispatch(fetchData(`/api/v0/powertrain/allEvents`));
   };
 
   // This method is used as reference to show how to export the current kepler.gl instance configuration
