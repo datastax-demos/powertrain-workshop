@@ -1,3 +1,7 @@
+*.iml
 githubapp.log
+.DS_Store
 target/
 docker-silk-dse/
+app/ui/node_modules/
+app/.idea/
