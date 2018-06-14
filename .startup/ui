@@ -2,6 +2,27 @@
 
 set -x
 
+set -x
+
+
+HOST_IP=$(ifconfig | awk '/inet/ { print $2 }' | egrep -v '^fe|^127|^192|^172|::' | head -1)
+HOST_IP=${IP#addr:}
+export IP=$HOST_IP
+
+if [[ $HOSTNAME == "node"* ]] ; then
+    #rightscale
+    HOST_IP=$(grep $(hostname)_ext /etc/hosts | awk '{print $1}')
+    export IP=$HOST_IP
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+    HOST_IP=$(docker run --net=host debian:jessie ip addr show|grep inet|grep eth0|awk '{print $2}'|awk -F'/' '{print $1}')
+    export IP=localhost
+fi
+
+lsof -i:8080|grep java | awk '{print $2}' | xargs kill
+
 export MapboxAccessToken=pk.eyJ1IjoicGhhY3QiLCJhIjoiY2poc3kyYjZjMDd4czNwcDc4NnFuN3M0MSJ9.evDUvKHEPevjLOv1t04aAA
 
 cd app
