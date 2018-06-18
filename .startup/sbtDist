@@ -5,13 +5,12 @@ set -x
 if [[ $HOSTNAME == "node"* ]] ; then
 su ds_user <<'EOF'
 # Nodejs
-export NODEJS_HOME=/usr/local/lib/nodejs/node-v"9.10.1"/bin
-export PATH=$NODEJS_HOME:$PATH
-
-npm install
+sbt updateSecret
+sbt dist
 EOF
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-npm install
+sbt updateSecret
+sbt dist
 fi
