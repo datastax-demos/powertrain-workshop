@@ -34,7 +34,7 @@ const CONFIG = {
     app: resolve('./src/main.js')
   },
 
-  devtool: 'source-map',
+  devtool: 'eval',
 
   module: {
     rules: [
@@ -74,7 +74,7 @@ const PROD = {
     app: resolve('./src/main.js')
   },
 
-  devtool: 'source-map',
+  devtool: 'eval',
 
   module: {
     rules: [

@@ -2,7 +2,7 @@
 
 set -x
 
-if [ -x sbt ] && [ -x "$(command -v sbt)" ] ; then
+if [ ! -x sbt ] && [ ! -x "$(command -v sbt)" ] ; then
     if [[ $HOSTNAME == "node"* ]] ; then
         #rightscale
         echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list

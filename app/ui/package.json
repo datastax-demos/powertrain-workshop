@@ -1,6 +1,11 @@
 {
+  "name": "powertrainapp",
+  "version": "1.0.0",
+  "description": "React/Redux ui for Powertrain",
+  "main": "src/app.js",
+  "author": "Sebastián Estévez",
   "scripts": {
-    "start": "webpack-dev-server --progress --hot --open",
+    "start": "webpack-dev-server --progress --hot --host 0.0.0.0",
     "build": "webpack -p"
   },
   "dependencies": {
@@ -15,6 +20,7 @@
     "react-router-redux": "^4.0.8",
     "react-virtualized": "^9.18.5",
     "redux-actions": "^2.2.1",
+    "copy-webpack-plugin": "^4.5.1",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {

@@ -5,6 +5,7 @@ install_kafka.sh
 start_spark_job.sh
 start_powertrain.sh
 nodejs
+npmInstall
 ui
 #silk
 hugo

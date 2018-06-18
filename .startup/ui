@@ -23,12 +23,11 @@ fi
 
 lsof -i:8081 | grep java | awk '{print $2}' | xargs kill -9
 
-export MapboxAccessToken=pk.eyJ1IjoicGhhY3QiLCJhIjoiY2poc3kyYjZjMDd4czNwcDc4NnFuN3M0MSJ9.evDUvKHEPevjLOv1t04aAA
-
 cd app
 
 cd ui
 
+export MapboxAccessToken=pk.eyJ1IjoicGhhY3QiLCJhIjoiY2poc3kyYjZjMDd4czNwcDc4NnFuN3M0MSJ9.evDUvKHEPevjLOv1t04aAA
 npm run build
 
 cd ..
