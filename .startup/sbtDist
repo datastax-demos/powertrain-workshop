@@ -4,8 +4,8 @@ set -x
 
 if [[ $HOSTNAME == "node"* ]] ; then
 su ds_user <<'EOF'
-# Nodejs
-sbt updateSecret
+cd /tmp/Powertrain2
+sbt playUpdateSecret
 sbt dist
 EOF
 fi

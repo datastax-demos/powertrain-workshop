@@ -30,7 +30,5 @@ pip install dse-driver
 pip install cassandra-driver
 pip install config
 
-sbt playUpdateSecret
-sbt dist
 unzip target/universal/powertrain2-1.0-SNAPSHOT.zip
 nohup powertrain2-1.0-SNAPSHOT/bin/powertrain2 -Dconfig.file=conf/application.conf &
