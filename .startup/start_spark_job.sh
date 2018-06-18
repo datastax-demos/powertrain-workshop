@@ -25,6 +25,8 @@ cd /tmp/PowertrainStreaming
 
 if [[ $HOSTNAME == "node"* ]] ; then
 su ds_user <<'EOF'
+sudo chown -R ds_user /tmp/PowertrainStreaming
+cd /tmp/PowertrainStreaming
 sbt package
 EOF
 fi

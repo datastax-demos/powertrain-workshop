@@ -4,6 +4,7 @@ set -x
 
 if [[ $HOSTNAME == "node"* ]] ; then
 su ds_user <<'EOF'
+sudo chown -R ds_user /tmp/Powertrain2
 cd /tmp/Powertrain2
 sbt playUpdateSecret
 sbt dist
