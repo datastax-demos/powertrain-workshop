@@ -45,18 +45,27 @@ function convertToCSV(objArray) {
 
 export function fetchData(url){
    return(dispatch, getState) => {
-       setInterval(function(){
+       var interval = setInterval(function(){
            dispatch(getData(url));
        }, 3000);
+       dispatch(updateData("SET_INTERVAL", interval));
    }
 }
+
+export function pause(){
+   return(dispatch, getState) => {
+       clearInterval(getState().interval.value);
+       //dispatch(("SET_INTERVAL", null));
+   }
+}
+
 export function getData(url){
    return(dispatch, getState) => {
         get({
             url:url,
             success: function(res){
                 var csvData = convertToCSV(res.data);
-                dispatch(updateData(csvData));
+                dispatch(updateData("GET_DATA",csvData));
                 const data = Processors.processCsvData(csvData);
                 const dsedata = {
                   data,
@@ -72,11 +81,11 @@ export function getData(url){
    }
 }
 
-export const updateData = (dsedata) => {
+export const updateData = (type, data) => {
     return {
-        type: "GET_DATA",
-        dsedata: dsedata
+        type: type,
+        data: data
     }
 }
 
-export default getData;
+export default {getData, pause};

@@ -21,7 +21,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export IP=localhost
 fi
 
-lsof -i:8080|grep java | awk '{print $2}' | xargs kill
+lsof -i:8081 | grep java | awk '{print $2}' | xargs kill -9
 
 export MapboxAccessToken=pk.eyJ1IjoicGhhY3QiLCJhIjoiY2poc3kyYjZjMDd4czNwcDc4NnFuN3M0MSJ9.evDUvKHEPevjLOv1t04aAA
 

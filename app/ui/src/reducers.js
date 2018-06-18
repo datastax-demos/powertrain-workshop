@@ -19,9 +19,16 @@ const reducers = combineReducers({
       'GET_DATA',
       (state, action) => ({
           ...state,
-          dsedata : action.dsedata
+          dsedata : action.data
       }),
       initialAppState
+  ),
+  interval: handleAction(
+      'SET_INTERVAL',
+      (state, action) => ({
+          ...state,
+          value : action.data
+      }),null
   ),
   routing: routerReducer
 });

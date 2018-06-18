@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {
+  toggleSidePanel
+//} from 'kepler.gl/actions/ui-state-actions';
+} from 'kepler.gl/actions';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import KeplerGl from 'kepler.gl';
 // Kepler.gl actions
@@ -15,7 +19,7 @@ import downloadJsonFile from "./file-download";
 import nycTrips from './data/dsedata.csv.js';
 import dseConfig from './data/dse-config.json';
 import nycTripsSubset from './data/nyc-subset.csv';
-import {getData, fetchData} from './actions';
+import {getData, fetchData, pause} from './actions';
 
 const MAPBOX_TOKEN = process.env.MapboxAccessToken; // eslint-disable-line
 
@@ -40,9 +44,14 @@ class App extends Component {
   // Created to show how to replace dataset with new data and keeping the same configuration
   fetchData = () => {
     const config = this.getMapConfig();
+    this.props.dispatch(toggleSidePanel(null));
     this.props.dispatch(fetchData(`/api/v0/powertrain/allEvents`));
   };
 
+  pause= () => {
+    this.props.dispatch(toggleSidePanel('layer'));
+    this.props.dispatch(pause());
+  }
   // This method is used as reference to show how to export the current kepler.gl instance configuration
   // Once exported the configuration can be imported using parseSavedConfig or load method from KeplerGlSchema
   getMapConfig() {
@@ -64,11 +73,21 @@ class App extends Component {
     downloadJsonFile(mapConfig, 'kepler.gl.json');
   };
 
+
   render() {
+    var activeSidePanel = "";
+    if (this.props.keplerGl.map !== undefined){
+        activeSidePanel = this.props.keplerGl.map.uiState.activeSidePanel;
+    }
     return (
       <div style={{position: 'absolute', width: '100%', height: '100%'}}>
         <LeftButton onClick={this.exportMapConfig}>Export Config</LeftButton>
-        <Button onClick={this.fetchData}>Fetch Data</Button>
+        {
+            (activeSidePanel == 'layer') ?
+                <Button onClick={this.fetchData}>Fetch Data</Button>
+            :
+                <Button onClick={this.pause}>Pause</Button>
+        }
         <AutoSizer>
           {({height, width}) => (
             <KeplerGl
