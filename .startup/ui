@@ -27,6 +27,10 @@ cd app
 
 cd ui
 
+NODE_VERSION=9.10.1
+export NODEJS_HOME=/usr/local/lib/nodejs/node-v"${NODE_VERSION}"/bin
+export PATH=$NODEJS_HOME:$PATH
+
 export MapboxAccessToken=pk.eyJ1IjoicGhhY3QiLCJhIjoiY2poc3kyYjZjMDd4czNwcDc4NnFuN3M0MSJ9.evDUvKHEPevjLOv1t04aAA
 npm run build
 
