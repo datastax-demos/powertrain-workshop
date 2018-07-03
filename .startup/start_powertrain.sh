@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 sedi () {
     sed --version >/dev/null 2>&1 && sed -i -- "$@" || sed -i "" "$@"
 }
