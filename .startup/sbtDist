@@ -12,6 +12,6 @@ EOF
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-sbt updateSecret
+sbt playUpdateSecret
 sbt dist
 fi

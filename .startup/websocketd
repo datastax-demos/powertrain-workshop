@@ -7,7 +7,7 @@ set -x
 #idempotence
 find websocketd/ ! -name 'startup.out' -type f -exec rm -f {} +
 lsof -i:8000 |grep -i python| awk '{print $2}'| xargs kill -9
-lsof -i:1234 |grep -i python| awk '{print $2}'| xargs kill -9
+lsof -i:1234 |grep -i websocket| awk '{print $2}'| xargs kill -9
 
 mkdir websocketd
 
@@ -30,7 +30,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     IP=localhost
 fi
 
-curl -LO ./ https://github.com/joewalnes/websocketd/releases/download/v${VERSION}/websocketd-${VERSION}-${DL_SUFFIX}.zip
+curl -LO https://github.com/joewalnes/websocketd/releases/download/v${VERSION}/websocketd-${VERSION}-${DL_SUFFIX}.zip
 
 unzip websocketd-${VERSION}-${DL_SUFFIX}.zip
 
