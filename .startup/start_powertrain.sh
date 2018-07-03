@@ -26,7 +26,7 @@ rm -rf /tmp/Powertrain2/powertrain2-1.0-SNAPSHOT/RUNNING_PID
 
 echo "Starting powertrain"
 cd /tmp/Powertrain2/
-sedi 's|this.ws = new WebSocket|this.ws = new WebSocket("ws://" + "'${IP}':9000" + "/vehicleStream");|' public/game/bkcore/hexgl/VehicleStream.js
+sedi 's|this.ws = new WebSocket.*|this.ws = new WebSocket("ws://" + "'${IP}':9000" + "/vehicleStream");|' public/game/bkcore/hexgl/VehicleStream.js
 
 pip install dse-driver
 pip install cassandra-driver
