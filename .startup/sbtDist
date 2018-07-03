@@ -12,6 +12,7 @@ EOF
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+cd /tmp/Powertrain2
 sbt playUpdateSecret
 sbt dist
 fi
