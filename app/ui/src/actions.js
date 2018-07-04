@@ -5,6 +5,8 @@ import {addDataToMap} from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
 import KeplerGlSchema from 'kepler.gl/schemas';
 
+//TODO: There are some scaling and splitting hacks in here that aren't needed
+// when better data is available
 function convertToCSV(objArray) {
     var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
     var str = '';
@@ -30,7 +32,7 @@ function convertToCSV(objArray) {
 
             if (index == "lat_long"){
                 var latlonArray = array[i][index].split(":");
-                line += latlonArray[0] + "," + latlonArray[1]
+                line += "" + (parseFloat(40.7) + parseFloat(latlonArray[0])/200) + "," + (parseFloat(-74.03) + parseFloat(latlonArray[1])/160);
             }
             else{
                 line += array[i][index];

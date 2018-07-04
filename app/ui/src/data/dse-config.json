@@ -5,11 +5,64 @@
       "filters": [],
       "layers": [
         {
+          "id": "jodvvwm",
+          "type": "point",
+          "config": {
+            "dataId": "dsedata",
+            "label": "Circles by User",
+            "color": [
+              179,
+              173,
+              158
+            ],
+            "columns": {
+              "lat": "lat",
+              "lng": "lon",
+              "altitude": "elevation"
+            },
+            "isVisible": true,
+            "visConfig": {
+              "radius": 30.3,
+              "fixedRadius": false,
+              "opacity": 0.8,
+              "outline": false,
+              "thickness": 2,
+              "colorRange": {
+                "name": "Global Warming",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "radiusRange": [
+                0,
+                50
+              ],
+              "hi-precision": false
+            }
+          },
+          "visualChannels": {
+            "colorField": {
+              "name": "vehicleId",
+              "type": "string"
+            },
+            "colorScale": "ordinal",
+            "sizeField": null,
+            "sizeScale": "linear"
+          }
+        },
+        {
           "id": "wyaw7bc",
           "type": "hexagon",
           "config": {
             "dataId": "dsedata",
-            "label": "Vehicle Stats",
+            "label": "Hexagons",
             "color": [
               23,
               184,
@@ -19,10 +72,10 @@
               "lat": "lat",
               "lng": "lon"
             },
-            "isVisible": true,
+            "isVisible": false,
             "visConfig": {
               "opacity": 0.8,
-              "worldUnitSize": 10.13,
+              "worldUnitSize": 0.05,
               "resolution": 8,
               "colorRange": {
                 "name": "ColorBrewer RdYlBu-10",
@@ -55,7 +108,7 @@
                 0,
                 100
               ],
-              "elevationScale": 18,
+              "elevationScale": 1,
               "hi-precision": false,
               "colorAggregation": "average",
               "sizeAggregation": "average",
@@ -98,12 +151,12 @@
       "splitMaps": []
     },
     "mapState": {
-      "bearing": -29.800901339049773,
-      "dragRotate": true,
-      "latitude": -1.002883870266745,
-      "longitude": -1.3075475981937275,
-      "pitch": 58.73898169076713,
-      "zoom": 6.077523277359848,
+      "bearing": 0,
+      "dragRotate": false,
+      "latitude": 40.699838000470706,
+      "longitude": -74.03087986984322,
+      "pitch": 0,
+      "zoom": 13.80187828249628,
       "isSplit": false
     },
     "mapStyle": {
