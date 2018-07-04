@@ -5,8 +5,8 @@
       "filters": [],
       "layers": [
         {
-          "id": "3ekkl9f",
-          "type": "point",
+          "id": "wyaw7bc",
+          "type": "hexagon",
           "config": {
             "dataId": "dsedata",
             "label": "Vehicle Stats",
@@ -17,16 +17,13 @@
             ],
             "columns": {
               "lat": "lat",
-              "lng": "lon",
-              "altitude": "elevation"
+              "lng": "lon"
             },
             "isVisible": true,
             "visConfig": {
-              "radius": 10,
-              "fixedRadius": false,
               "opacity": 0.8,
-              "outline": true,
-              "thickness": 2,
+              "worldUnitSize": 10.13,
+              "resolution": 8,
               "colorRange": {
                 "name": "ColorBrewer RdYlBu-10",
                 "type": "diverging",
@@ -45,11 +42,24 @@
                 ],
                 "reversed": true
               },
-              "radiusRange": [
-                28.6,
-                71.8
+              "coverage": 1,
+              "sizeRange": [
+                0,
+                500
               ],
-              "hi-precision": false
+              "percentile": [
+                0,
+                100
+              ],
+              "elevationPercentile": [
+                0,
+                100
+              ],
+              "elevationScale": 18,
+              "hi-precision": false,
+              "colorAggregation": "average",
+              "sizeAggregation": "average",
+              "enable3d": true
             }
           },
           "visualChannels": {
@@ -59,10 +69,10 @@
             },
             "colorScale": "quantile",
             "sizeField": {
-              "name": "acceleration",
+              "name": "elevation",
               "type": "real"
             },
-            "sizeScale": "sqrt"
+            "sizeScale": "linear"
           }
         }
       ],
@@ -88,12 +98,12 @@
       "splitMaps": []
     },
     "mapState": {
-      "bearing": -69.98091934084995,
+      "bearing": -29.800901339049773,
       "dragRotate": true,
-      "latitude": -0.4373736607707486,
-      "longitude": -3.1119852910066026,
-      "pitch": 58.694358500270035,
-      "zoom": 5.772750214168159,
+      "latitude": -1.002883870266745,
+      "longitude": -1.3075475981937275,
+      "pitch": 58.73898169076713,
+      "zoom": 6.077523277359848,
       "isSplit": false
     },
     "mapStyle": {
