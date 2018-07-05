@@ -28,6 +28,21 @@ echo "Starting powertrain"
 cd /tmp/Powertrain2/
 sedi 's|this.ws = new WebSocket.*|this.ws = new WebSocket("ws://" + "'${IP}':9000" + "/vehicleStream");|' public/game/bkcore/hexgl/VehicleStream.js
 
+if [[ $HOSTNAME == "node"* ]] ; then
+su ds_user <<'EOF'
+sudo chown -R ds_user /tmp/Powertrain2
+cd /tmp/Powertrain2
+sbt playUpdateSecret
+sbt dist
+EOF
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+cd /tmp/Powertrain2
+sbt playUpdateSecret
+sbt dist
+fi
+
 pip install dse-driver
 pip install cassandra-driver
 pip install config

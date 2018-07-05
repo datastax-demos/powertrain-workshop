@@ -3,7 +3,6 @@ install_sbt.sh
 create_schema.sh
 create_application_conf.sh
 install_kafka.sh
-sbtDist
 start_spark_job.sh
 start_powertrain.sh
 nodejs
