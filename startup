@@ -154,6 +154,7 @@ done
 #printf "ordered_components_ary: %s\n" "${ordered_components_ary[@]}" 1>&2
 
 printf "http://localhost:8000"
+mkdir websocketd
 exec &> >(tee -a websocketd/startup.out)
 
 # If you are looking for docs on this script, consult https://github.com/jshook/simple-startup
