@@ -33,6 +33,8 @@ You can see the data flowing by looking at your javascript console.
 ### Results
 
 Once users have raced, the data is published to Kafka, crunched by spark streaming, and persisted to DSE.
-Go to the SiLK UI (port 5601 on your seed node) to see a time series summary of the races in th system.
-Go to the Studio notebook to perform some cql, gremlin, or sparksql queries on the data.
+Go to the Powertrain Viewer (port 8081 on your seed node) to see a geographic representation of the races in th system.
 
+Kepler.gl allows you to fetch data in real time using the fetch button and to manipulate the visualization using the kepler.gl panel when the visualization is paused.
+
+Finally, go to the Studio notebook to perform some cql, gremlin, or sparksql queries on the data.

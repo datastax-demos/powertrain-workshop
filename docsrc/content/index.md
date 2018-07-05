@@ -4,7 +4,7 @@ type: index
 weight: 0
 ---
 
-This asset is designed as an art of the possible demonstration to show real time data streaming into DSE analytics for both cql and graph. The UI is a video game that generates the data.
+This asset is designed as an art of the possible demonstration to show real time data streaming into DSE analytics for both cql and graph. The UI is a video game that generates the data. Finally, we are able to visualize the resulting geo data in a 3d map.
 
 ### Motivation
 
@@ -21,7 +21,7 @@ This field asset (demo) includes the following:
 * DSE Graph
 * DSE Analytics
 * DSE Search
-* SiLK
+* 3d Map Visualization
 
 ### Business Take Aways
 
@@ -32,5 +32,7 @@ The Powertrain demo demonstrates how a video game's real-time and contextual req
 
 The HTML5 race car video game (mobile compatible) communicates with the Scala Play Framework application via web sockets (push).
 The real time streaming data is published to a Kafka queue.
+
+
 DSE Analytics is used to run a Spark streaming application that listens to the Kafka queue, processes the data and writes cql metrics to DSE and contextual data to DSE graph using gremlin.
-To view the results of the race car data we use, a DSE Search driven time series dashboard (powered by SiLK is the port of Kibana for SOLR).
+To view the results of the race car data we use a 3d representation of the data powered by deck.gl and kepler.gl.
