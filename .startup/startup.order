@@ -8,5 +8,6 @@ start_powertrain.sh
 nodejs
 npmInstall
 ui
+notebook
 #silk
 hugo
